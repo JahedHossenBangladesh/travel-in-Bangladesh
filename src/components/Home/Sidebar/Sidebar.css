@@ -1,0 +1,29 @@
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.searchBtn {
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgb(68, 228, 180),
+    rgb(55, 218, 82),
+    rgb(101, 219, 107)
+  );
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.border-3 {
+  border-width: 3px !important;
+}
