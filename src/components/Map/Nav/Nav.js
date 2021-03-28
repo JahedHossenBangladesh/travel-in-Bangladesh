@@ -6,7 +6,7 @@ const Nav = () => {
     return (
       <>
         <div className="container ">
-          <div className="row">
+          <div className="row ">
          
               <ul
                 className="nav mt-1 "
