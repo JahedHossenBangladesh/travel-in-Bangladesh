@@ -4,19 +4,17 @@ import Nav from '../Nav/Nav';
 
 const MapPage = () => {
     return (
-        <>
-         <Nav/>   
-         <div className="container">
-             <div className="row">
-                 <div className="col-sm-6 border">
-                     <DivisionHotel/>
-                 </div>
-                 <div className="col-sm-6 border">
-                     This is Map
-                 </div>
-             </div>
-         </div>
-        </>
+      <>
+        <Nav />
+        <div className="container border-top ">
+          <div className="row mt-3 ">
+            <div className="col-sm-7 " >
+              <DivisionHotel />
+            </div>
+            <div className="col-sm-5">This is Map</div>
+          </div>
+        </div>
+      </>
     );
 };
 
