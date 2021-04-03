@@ -5,7 +5,7 @@ export default function DivisionHotel() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-12" style={{ marginRight: "25px" }}>
+          <div className="col-sm-12 mb-5" style={{ marginRight: "25px" }}>
             <InfoGest />
           </div>
         </div>
