@@ -7,13 +7,13 @@ const MapPage = () => {
     return (
       <>
         <Nav />
-        <div className="container border-top ">
+        <div className="container border-top mb-2">
           <div className="row ">
-            <div className="col-sm-7 " >
+            <div className="col-sm-6 ml-0" >
               <DivisionHotel />
               <HotelDetails />
             </div>
-            <div className="col-sm-5">This is Map</div>
+            <div className="col-sm-6">This is Map</div>
           </div>
         </div>
       </>

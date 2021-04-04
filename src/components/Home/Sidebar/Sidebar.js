@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import Form from "./Form/Form";
 import "./Sidebar.css";
 
@@ -171,10 +172,12 @@ const [open, setOpen] = useState(false);
           </div>
         </div>
 
-        <button type="submit" className="searchBtn">
+    <Link to="/mapPage">
+       <button type="submit" className="searchBtn">
           <FontAwesomeIcon icon={faSearch} className="pr-1" />
           Search
         </button>
+    </Link> 
       </form>
     </>
   );
