@@ -1,4 +1,4 @@
-import { faChevronDown, faChevronUp, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp, faSearch, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Form from "./Form/Form";
 import "./Sidebar.css";
-
 const crypto = require("crypto");
 
 const id = crypto.randomBytes(16).toString("hex");
@@ -14,12 +13,12 @@ const id = crypto.randomBytes(16).toString("hex");
 // import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
 
 const[increaseAdult,setIncreaseAdult] = useState(0);
 const[increaseChild,setIncreaseChild] = useState(0);
 const [increaseBaby, setIncreaseBaby] = useState(0);
-const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(true);
 
   function getDate() {
     var today = new Date();
@@ -34,20 +33,26 @@ const [open, setOpen] = useState(false);
   const { register, handleSubmit, errors, control } = useForm();
   const onSubmit = (data) => console.log(data);
 
+  const title = "Where do you want to go";
   // console.log(errors);
 
   return (
     <>
-      <h5 className="mt-3 mb-3">Where do you want to go</h5>
+      <h5 className="mt-3 mb-3">{props.title}</h5>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <select ref={register} name="locationSelect">
-          <option value="cows-bazar">cows-bazar</option>
-          <option value="Sylhet">Sylhet 1</option>
-          <option value="Bandorbon">Bandorban</option>
-          <option value="Sundorbon">Sundorbon</option>
-          <option value="Rajshahi">Rajshahi</option>
-        </select>
-
+        { props.form ?
+          <select ref={register} name="locationSelect">
+            <option value="cows-bazar">cows-bazar</option>
+            <option value="Sylhet">Sylhet 1</option>
+            <option value="Bandorbon">Bandorban</option>
+            <option value="Sundorbon">Sundorbon</option>
+            <option value="Rajshahi">Rajshahi</option>
+          </select> : ''
+        }
+        {props.ratetting ?
+        <p>
+              <FontAwesomeIcon icon={faStar} color="green" /> {props.ratetting}
+            </p> : ''}
         <div className="container">
           <div className="row mb-2">
             <div className="col-12 col-sm-5 pl-0 ml-.5 mr-.5">
@@ -129,19 +134,16 @@ const [open, setOpen] = useState(false);
               <Collapse in={open}>
                 <div id="example-collapse-text">
                   <Form
-                
                     increase={increaseAdult}
                     setIncrease={setIncreaseAdult}
                     name="ADULT"
                   />
                   <Form
-                   
                     increase={increaseChild}
                     setIncrease={setIncreaseChild}
                     name="CHILD"
                   />
                   <Form
-                  
                     increase={increaseBaby}
                     setIncrease={setIncreaseBaby}
                     name="BABIES"
@@ -172,12 +174,12 @@ const [open, setOpen] = useState(false);
           </div>
         </div>
 
-    <Link to="/mapPage">
-       <button type="submit" className="searchBtn">
-          <FontAwesomeIcon icon={faSearch} className="pr-1" />
-          Search
-        </button>
-    </Link> 
+        <Link to="/mapPage">
+          <button type="submit" className="searchBtn">
+            <FontAwesomeIcon icon={faSearch} className="pr-1" />
+            Search
+          </button>
+        </Link>
       </form>
     </>
   );

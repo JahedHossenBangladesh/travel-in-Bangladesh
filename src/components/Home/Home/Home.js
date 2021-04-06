@@ -8,7 +8,7 @@ export default function Home() {
             <Navbar/>
             <div className="container m-0 mt-3">
                 <div className="row ">
-                     <div className="col-5"><Sidebar/> </div>
+                     <div className="col-5"><Sidebar title ={"where do you want to go"} form ={true}/> </div>
                      <div className="col-7">col-7</div>
  
                 </div>
