@@ -5,17 +5,18 @@ import HotelDetail from './HotelDetail';
 import HotelPhoto from './HotelPhoto';
 const HomeDescription = () => {
     return (
-      <div style= {{height:"2000px"}}>
-        <div>
-          <Nav />
-        </div>
-        <div>
-          <HotelPhoto />
-        </div>
-        <div className= "mt-5"  style={{marginTop:"1800px"}}>
-          <HotelDetail />
-        </div>
+      <>
+      <Nav/>
+      <HotelPhoto/>
+      <div className="container">
+          <div className="row">
+              <div className="col-sm-12">
+                  <HotelDetail/>
+              </div>
+          </div>
       </div>
+      </>
+    
     );
 };
 
