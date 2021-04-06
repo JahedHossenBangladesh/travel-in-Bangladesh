@@ -8,13 +8,14 @@ const HomeDescription = () => {
       <>
       <Nav/>
       <HotelPhoto/>
-      <div className="container">
-          <div className="row">
-              <div className="col-sm-12">
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+    
                   <HotelDetail/>
-              </div>
-          </div>
-      </div>
+         
       </>
     
     );
