@@ -38,7 +38,7 @@ const InfoGest = () => {
             <button
               type="button"
               style={{ borderRadius: "25px" }}
-              className="btn btn-outline-secondary rounded-pill mr-1 "
+              className="btn btn-outline-secondary rounded-pill mt-1 "
             >
               More Filters
             </button>

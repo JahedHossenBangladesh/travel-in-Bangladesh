@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Home from "./components/Home/Home/Home";
+import HomeDescription from "./components/HomeDescription/HomeDescription";
 import MapPage from "./components/Map/MapPage/MapPage";
 
 function App() {
@@ -18,8 +19,11 @@ function App() {
           <Route path="/mapPage">
             <MapPage />
           </Route>
+          <Route path="/homeDescription">
+            <HomeDescription />
+          </Route>
           <Route exact path="/">
-            <Home />
+            <HomeDescription />
           </Route>
         </Switch>
       </Router>
