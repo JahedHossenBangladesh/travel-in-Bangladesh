@@ -8,7 +8,7 @@ export default function HotelInfo(props) {
 
 const { img, title, capacity,kitchen ,cancel, ratetting, price, total } = props.infos;
     return (
-      <div className="col-sm-12 ">
+      <div className="col-sm-12 "  >
         <div className="containers">
           <div className="image">
             <img src={img} alt="" style={{ width: "200px" }} />

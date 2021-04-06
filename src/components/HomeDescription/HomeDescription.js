@@ -6,18 +6,15 @@ import HotelPhoto from './HotelPhoto';
 const HomeDescription = () => {
     return (
       <>
-      <Nav/>
-      <HotelPhoto/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-    
-                  <HotelDetail/>
-         
+        <Nav />
+        <HotelPhoto />
+    {/* <br/>
+    <br/>
+    <br/>
+    <br/> */}
+          <HotelDetail />
+        
       </>
-    
     );
 };
 
