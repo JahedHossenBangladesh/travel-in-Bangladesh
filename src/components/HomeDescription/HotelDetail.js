@@ -1,16 +1,16 @@
 import React from 'react';
-import Sidebar from '../Home/Sidebar/Sidebar';
+import Cart from './Cart';
 
 const HotelDetail = () => {
     return (
-      <div style={{ marginTop: "320px" }}>
+      <div style={{ marginTop: "310px" }}>
         {/* style={{ border: "2px solid black" }} */}
         <div className="container ">
           <div className="row">
             <div className="col-sm-6"></div>
             <div className="col-sm-6">
               <div>
-                <Sidebar title={"$34/night"} ratetting={"4.9(20 peoples)"} />
+                <Cart/>
               </div>
             </div>
           </div>
