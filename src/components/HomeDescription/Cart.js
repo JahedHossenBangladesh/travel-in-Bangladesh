@@ -2,7 +2,9 @@ import {
   faArrowRight,
 
 
-  faChevronDown, faChevronUp, faStar
+  faChevronDown, faChevronUp,
+
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from 'react';
@@ -14,7 +16,7 @@ const Cart = () => {
 
 const [open, setOpen] = useState(true);
     return (
-      <div className="container border">
+      <div className="container border mb-3" style={{ height: "450px" }}>
         <h6>$34/night</h6>
         <p className="text-secondary">
           <FontAwesomeIcon icon={faStar} color="green" /> 4.9(20 reviews)
@@ -34,7 +36,9 @@ const [open, setOpen] = useState(true);
         </div>
         <p>Guests</p>
         <div className="row border ml-1 mr-1">
-          <div className="col-sm-10">3 Guests</div>
+          <div className="col-sm-10 p-2">
+            <h6>3 Guests</h6>
+          </div>
           <div className="col-sm-2">
             <FontAwesomeIcon
               icon={open ? faChevronUp : faChevronDown}
@@ -47,21 +51,42 @@ const [open, setOpen] = useState(true);
         </div>
         <Collapse in={open}>
           <div className="container">
-            <div className="row">
-              <div className="col-sm-10">$34 * 4</div>
-              <div className="col-sm-2">$124</div>
-              <hr/>
-              <div className="col-sm-10">$34 * 4</div>
-              <div className="col-sm-2">$124</div>
-              <hr/>
-              <div className="col-sm-10">$34 * 4</div>
-              <div className="col-sm-2">$124</div>
-              <hr/>
-              <div className="col-sm-10">$34 * 4</div>
-              <div className="col-sm-2">$124</div>
+            <div className="row ">
+              <div className="col-sm-10 text-secondary border-bottom">
+                <p> $34 * 4</p>
+              </div>
+              <div className="col-sm-2 text-secondary border-bottom">
+                <p> $124</p>
+              </div>
+              <hr />
+              <div className="col-sm-10 text-secondary border-bottom">
+                {" "}
+                <p> Clearning fee </p>
+              </div>
+              <div className="col-sm-2 text-secondary border-bottom">$12</div>
+              <hr />
+              <div className="col-sm-10 text-secondary border-bottom ">
+                Service free
+              </div>
+              <div className="col-sm-2 border-bottom">
+                <p> $24 </p>
+              </div>
+              <hr />
+              <div className="col-sm-10">
+                <h6>Total</h6>
+              </div>
+              <div className="col-sm-2 ">
+                
+                <h6>$167</h6>
+              </div>
             </div>
           </div>
         </Collapse>
+        <div>
+          <button type="submit" className="searchBtn mb-2">
+            Reserve
+          </button>
+        </div>
       </div>
     );
 };
