@@ -45,9 +45,23 @@ const [open, setOpen] = useState(true);
             />
           </div>
         </div>
-<Collapse in={open}>
-  <p>This is me</p>
-</Collapse>
+        <Collapse in={open}>
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-10">$34 * 4</div>
+              <div className="col-sm-2">$124</div>
+              <hr/>
+              <div className="col-sm-10">$34 * 4</div>
+              <div className="col-sm-2">$124</div>
+              <hr/>
+              <div className="col-sm-10">$34 * 4</div>
+              <div className="col-sm-2">$124</div>
+              <hr/>
+              <div className="col-sm-10">$34 * 4</div>
+              <div className="col-sm-2">$124</div>
+            </div>
+          </div>
+        </Collapse>
       </div>
     );
 };
