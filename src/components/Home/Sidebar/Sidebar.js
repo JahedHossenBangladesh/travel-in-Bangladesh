@@ -1,4 +1,4 @@
-import { faChevronDown, faChevronUp, faSearch, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
@@ -9,6 +9,15 @@ import "./Sidebar.css";
 const crypto = require("crypto");
 
 const id = crypto.randomBytes(16).toString("hex");
+
+ type FormValues = {
+   locationSelect: string,
+   tripStart: string,
+   tripEnd: string,
+   adult :string,
+   child :string
+ };
+
 
 // import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,29 +39,49 @@ const [open, setOpen] = useState(true);
       "-" +
       ("0" + today.getDate()).slice(-2);
   }
-  const { register, handleSubmit, errors, control } = useForm();
-  const onSubmit = (data) => console.log(data);
 
-  const title = "Where do you want to go";
+ 
+
+  const { register,  watch} = useForm<FormValues>();
+
+  console.log(watch());
+
+  // const onSubmit = (data) => console.log(`data is ${data}`);
+
+  // console.log(handleSubmit);
+  
   // console.log(errors);
 
   return (
     <>
       <h5 className="mt-3 mb-3">{props.title}</h5>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        { props.form ?
-          <select ref={register} name="locationSelect">
+      <form 
+      // onSubmit={handleSubmit((data) =>{
+      //   console.log(`data ${data}`)
+      // })}
+      >
+        {props.form ? (
+          <select
+            {...register("locationSelect")}
+            // ref={register}
+            //  name="locationSelect"
+          >
             <option value="cows-bazar">cows-bazar</option>
             <option value="Sylhet">Sylhet 1</option>
             <option value="Bandorbon">Bandorban</option>
             <option value="Sundorbon">Sundorbon</option>
             <option value="Rajshahi">Rajshahi</option>
-          </select> : ''
-        }
-        {props.ratetting ?
-        <p>
-              <FontAwesomeIcon icon={faStar} color="green" /> {props.ratetting}
-            </p> : ''}
+          </select>
+        ) : (
+          ""
+        )}
+        {props.ratetting ? (
+          <p>
+            <FontAwesomeIcon icon={faStar} color="green" /> {props.ratetting}
+          </p>
+        ) : (
+          ""
+        )}
         <div className="container">
           <div className="row mb-2">
             <div className="col-12 col-sm-5 pl-0 ml-.5 mr-.5">
@@ -60,10 +89,11 @@ const [open, setOpen] = useState(true);
                 className="pl-4 pr-4 pt-4 pb-2 border"
                 type="date"
                 id="start"
-                name="trip-start"
+                {...register("tripStart")}
+                // name="trip-start"
                 placeholder="start"
                 onLoad="getDate()"
-                ref={register({ required: true })}
+                // ref={register({ required: true })}
               />
             </div>
             <div className="col-12 col-sm-3 ml-4">
@@ -71,9 +101,10 @@ const [open, setOpen] = useState(true);
                 className="pl-4 pr-4 pt-4 pb-2 border"
                 type="date"
                 id="start"
-                name="trip-end"
+                {...register("tripEnd")}
+                // name="trip-end"
                 onLoad="getDate()"
-                ref={register({ required: true })}
+                // ref={register({ required: true })}
               />
             </div>
           </div>
@@ -92,25 +123,27 @@ const [open, setOpen] = useState(true);
                         className="form-control  
                 input-sm"
                         type="none"
-                        ref={register}
-                        name="adult"
+                        
+                        {...register("adult")}
+                        // name="adult"
                         value={`${increaseAdult} ADULTS,`}
                         style={{
                           border: "none",
                           marginRight: "-118px",
                           fontWeight: "bold",
                         }}
-                        ref={register}
+                      
                       />
                       <input
                         className="form-control  
                 input-sm"
                         type="none"
-                        ref={register}
-                        name="child"
+                       
+                        {...register("child")}
+                        // name="child"
                         value={`${increaseChild + increaseBaby} CHILD`}
                         style={{ border: "none", fontWeight: "bold" }}
-                        ref={register}
+                     
                       />
                     </div>
                   </div>
@@ -175,10 +208,11 @@ const [open, setOpen] = useState(true);
         </div>
 
         <Link to="/mapPage">
-          <button type="submit" className="searchBtn">
+          {/* <input type="submit" className="searchBtn">
             <FontAwesomeIcon icon={faSearch} className="pr-1" />
             Search
-          </button>
+          </input> */}
+          <input type="submit" />
         </Link>
       </form>
     </>

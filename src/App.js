@@ -13,7 +13,7 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/mapPage">
@@ -22,9 +22,9 @@ function App() {
           <Route path="/homeDescription">
             <HomeDescription />
           </Route>
-          <Route exact path="/">
+          {/* <Route exact path="">
             <HomeDescription />
-          </Route>
+          </Route> */}
         </Switch>
       </Router>
     </>

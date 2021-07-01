@@ -68,7 +68,7 @@ const [open, setOpen] = useState(true);
               <div className="col-sm-10 text-secondary border-bottom ">
                 Service free
               </div>
-              <div className="col-sm-2 border-bottom">
+              <div className="col-sm-2 text-secondary border-bottom">
                 <p> $24 </p>
               </div>
               <hr />
@@ -86,6 +86,8 @@ const [open, setOpen] = useState(true);
           <button type="submit" className="searchBtn mb-2">
             Reserve
           </button>
+        <br/>
+        <p className="text-secondary">you can not change yet</p>
         </div>
       </div>
     );
